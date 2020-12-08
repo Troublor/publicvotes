@@ -1,0 +1,68 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/bin/node',
+1 verbose cli   '/Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'silentcicero:ethereumjs-accounts' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.40
+4 warn package.json @darcher/examples@1.0.0 No description
+5 warn package.json @darcher/examples@1.0.0 No README data
+6 warn package.json dom-serializer@0.1.1 No README data
+7 warn package.json messageformat-formatters@2.0.1 No README data
+8 warn package.json original-require@1.0.1 No README data
+9 warn package.json truffle-interface-adapter@0.2.5 No README data
+10 warn package.json async-eventemitter@0.2.4 No repository field.
+11 warn package.json buffer@5.7.1 buffer is also the name of a node core module.
+12 warn package.json chrome-debugging-client@2.0.0 No repository field.
+13 warn package.json ethereum-protocol@1.0.1 No repository field.
+14 warn package.json events@3.2.0 events is also the name of a node core module.
+15 warn package.json eyes@0.1.8 No repository field.
+16 warn package.json lighthouse-logger@1.2.0 No repository field.
+17 warn package.json punycode@2.1.1 punycode is also the name of a node core module.
+18 warn package.json safe-event-emitter@1.0.1 No repository field.
+19 warn package.json string_decoder@1.1.1 string_decoder is also the name of a node core module.
+20 verbose readDependencies using package.json deps
+21 verbose cache add [ 'silentcicero:ethereumjs-accounts', null ]
+22 verbose cache add name=undefined spec="silentcicero:ethereumjs-accounts" args=["silentcicero:ethereumjs-accounts",null]
+23 verbose parsed url { protocol: 'silentcicero:',
+23 verbose parsed url   slashes: null,
+23 verbose parsed url   auth: null,
+23 verbose parsed url   host: 'ethereumjs-accounts',
+23 verbose parsed url   port: null,
+23 verbose parsed url   hostname: 'ethereumjs-accounts',
+23 verbose parsed url   hash: null,
+23 verbose parsed url   search: null,
+23 verbose parsed url   query: null,
+23 verbose parsed url   pathname: null,
+23 verbose parsed url   path: null,
+23 verbose parsed url   href: 'silentcicero:ethereumjs-accounts' }
+24 silly lockFile fa99614d-silentcicero-ethereumjs-accounts silentcicero:ethereumjs-accounts
+25 verbose lock silentcicero:ethereumjs-accounts /Users/troublor/.npm/fa99614d-silentcicero-ethereumjs-accounts.lock
+26 silly lockFile fa99614d-silentcicero-ethereumjs-accounts silentcicero:ethereumjs-accounts
+27 silly lockFile fa99614d-silentcicero-ethereumjs-accounts silentcicero:ethereumjs-accounts
+28 verbose addNamed [ 'silentcicero:ethereumjs-accounts', '' ]
+29 verbose addNamed [ null, '*' ]
+30 silly lockFile 752c4cba-silentcicero-ethereumjs-accounts silentcicero:ethereumjs-accounts@
+31 verbose lock silentcicero:ethereumjs-accounts@ /Users/troublor/.npm/752c4cba-silentcicero-ethereumjs-accounts.lock
+32 silly addNameRange { name: 'silentcicero:ethereumjs-accounts',
+32 silly addNameRange   range: '*',
+32 silly addNameRange   hasData: false }
+33 error TypeError: Cannot call method 'replace' of null
+33 error     at cf (/Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/npm-cache-filename/index.js:14:22)
+33 error     at RegClient.get (/Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:28:20)
+33 error     at addNameRange (/Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/lib/cache/add-named.js:205:12)
+33 error     at /Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/lib/cache/add-named.js:47:5
+33 error     at /Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/lib/utils/locker.js:30:7
+33 error     at cb (/Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+33 error     at /Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/lockfile/lockfile.js:171:16
+33 error     at Object.oncomplete (fs.js:108:15)
+34 error If you need help, you may report this *entire* log,
+34 error including the npm and node versions, at:
+34 error     <http://github.com/npm/npm/issues>
+35 error System Darwin 20.1.0
+36 error command "/Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/bin/node" "/Users/troublor/.meteor/packages/meteor-tool/.1.1.10.gy6jl1.3jzia++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/bin/npm" "install" "silentcicero:ethereumjs-accounts"
+37 error cwd /Users/troublor/workspace/darcher/packages/darcher-examples/publicvotes/publicvotes/app
+38 error node -v v0.10.40
+39 error npm -v 1.4.28
+40 error type non_object_property_call
+41 verbose exit [ 1, true ]

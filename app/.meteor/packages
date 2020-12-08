@@ -23,5 +23,6 @@ maazalik:highcharts
 hilios:jquery.countdown
 twbs:bootstrap
 silentcicero:ethjs
+silentcicero:hooked-web3-provider
 reactive-var
 check

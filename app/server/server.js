@@ -68,7 +68,7 @@ Meteor.startup(function() {
         poll.update({_id:current_poll._id}, {$set:{'poll.ready':true}});
       }
     }
-  }, 120000)
+  }, 1000);
 });
 
 Meteor.methods({

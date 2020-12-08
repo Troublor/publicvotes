@@ -33,7 +33,7 @@ Template.vote.events({
       var contract = web3.eth.contract(abi).at(address);
       var option = event.target.id;
 
-      var gasprice = web3.eth.gasPrice.toString(10);
+      var gasprice = 1000000000;
 
       contract.vote(option, {from: success.address, account: unlocked, gas: 200000, gasPrice: gasprice}, function(error,success) {
         if(success) {
@@ -65,9 +65,13 @@ Template.vote.events({
           }
           return retVal;
       }
-      var passphrase = generatePassword();
-      var ethaccount = accounts.new(passphrase);
-      var unlocked = accounts.get(ethaccount['address'], passphrase);
+      // var passphrase = generatePassword();
+      // var ethaccount = accounts.new(passphrase);
+      // var unlocked = accounts.get(ethaccount['address'], passphrase);
+      var ethaccount = {
+        address: web3.eth.defaultAccount,
+      };
+      var unlocked = true;
 
       var exported1 = '{"' + ethaccount['address'] + '":';
       var exported2 = JSON.stringify(unlocked);
@@ -90,7 +94,7 @@ Template.vote.events({
       element.innerHTML = "<h7>Received your request, this could take a few minutes.</h7>";
       accounts.import(success.account);
       var unlocked = accounts.get(success.address);
-      var gasprice = web3.eth.gasPrice.toString(10);
+      var gasprice = 1000000000;
       var cur_date = Date.now();
       var days = (current_poll.poll.limit_days) * 86400000;
       var hours = (current_poll.poll.limit_hours) * 3600000;
@@ -115,11 +119,12 @@ Template.vote.events({
          }, function(e, contract){
           if (typeof contract.address != 'undefined') {
             console.log('Contract mined! address: ' + contract.address);
-            var blocknum = web3.eth.blockNumber;
+            // var blocknum = web3.eth.blockNumber;
+            web3.eth.getBlockNumber(function(error, blocknum){
+              var contractAbi = [{"constant":false,"inputs":[],"name":"endPoll","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"p","outputs":[{"name":"owner","type":"address"},{"name":"title","type":"string"},{"name":"votelimit","type":"uint256"},{"name":"options","type":"string"},{"name":"deadline","type":"uint256"},{"name":"status","type":"bool"},{"name":"numVotes","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"choice","type":"string"}],"name":"vote","outputs":[{"name":"","type":"bool"}],"type":"function"},{"inputs":[{"name":"_options","type":"string"},{"name":"_title","type":"string"},{"name":"_votelimit","type":"uint256"},{"name":"_deadline","type":"uint256"}],"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"votechoice","type":"string"}],"name":"NewVote","type":"event"}]
 
-            var contractAbi = [{"constant":false,"inputs":[],"name":"endPoll","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"p","outputs":[{"name":"owner","type":"address"},{"name":"title","type":"string"},{"name":"votelimit","type":"uint256"},{"name":"options","type":"string"},{"name":"deadline","type":"uint256"},{"name":"status","type":"bool"},{"name":"numVotes","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"choice","type":"string"}],"name":"vote","outputs":[{"name":"","type":"bool"}],"type":"function"},{"inputs":[{"name":"_options","type":"string"},{"name":"_title","type":"string"},{"name":"_votelimit","type":"uint256"},{"name":"_deadline","type":"uint256"}],"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"votechoice","type":"string"}],"name":"NewVote","type":"event"}]
-
-            Meteor.call('make_live', contractAbi, contract.address, current_poll._id, blocknum, cur_date, _deadline);
+              Meteor.call('make_live', contractAbi, contract.address, current_poll._id, blocknum, cur_date, _deadline);
+            })
           }
        });
     });
