@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "This describes the file structure as well as the dependencies which are used for the OpenVotes voting platform.",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "babel-plugin-istanbul": "^6.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nyc meteor",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "plugins": [
+      "istanbul"
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}
